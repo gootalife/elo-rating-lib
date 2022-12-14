@@ -1,0 +1,38 @@
+{
+  "name": "elo-rating-lib",
+  "version": "1.0.0",
+  "description": "イロレーティングの実装。",
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "node /dist/index.js",
+    "start:ts": "ts-node src/index.ts",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "test": "jest",
+    "test:cov": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gootalife/elo-rating-lib.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gootalife/elo-rating-lib/issues"
+  },
+  "homepage": "https://github.com/gootalife/elo-rating-lib#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "jest": "^27.2.1",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.4.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.+(ts|tsx)",
+      "**/?(*.)+(spec|test).+(ts|tsx)"
+    ]
+  }
+}
