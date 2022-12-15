@@ -69,3 +69,9 @@ test('1500 lose 1850', () => {
   expect(result.playerNewRating).toBe(1496)
   expect(result.opponentNewRating).toBe(1854)
 })
+
+test('Error: Invalid args were detected.', () => {
+  expect(() => EloRating.calcNewRating(1500, 1850, 1, 2)).toThrow('Invalid args were detected.')
+  expect(() => EloRating.calcNewRating(1500, 1850, -1, 0)).toThrow('Invalid args were detected.')
+  expect(() => EloRating.calcNewRating(1500, 1850, 0, -1)).toThrow('Invalid args were detected.')
+})

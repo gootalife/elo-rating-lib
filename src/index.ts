@@ -3,8 +3,8 @@ export const EloRating = {
     return 1 / (1 + Math.pow(10, (opponentRating - playerRating) / 400))
   },
   calcNewRating: (playerRating: number, opponentRating: number, totalGames: number, playerWins: number, k: number = 32): NewRatingCalculationResult => {
-    if (playerWins > totalGames) {
-      throw new Error('Invalid args: playerWins > totalGames')
+    if (playerWins > totalGames || playerWins < 0 || totalGames <= 0) {
+      throw new Error('Invalid args were detected.')
     }
     const playerWinPlobability = EloRating.calcWinPlobability(playerRating, opponentRating)
     const newPlayerRating = playerRating + Math.round(k * (playerWins - totalGames * playerWinPlobability))
